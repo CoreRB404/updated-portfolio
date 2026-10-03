@@ -534,6 +534,57 @@ textarea {
     background: #111;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+}
+
+.portfolio__item__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.25);
+    pointer-events: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio__item:hover .portfolio__item__icon {
+    color: rgba(255, 255, 255, 0.45);
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.portfolio__item__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 2;
+    overflow-y: auto;
+}
+
+.portfolio__item:hover .portfolio__item__overlay {
+    opacity: 1;
+}
+
+.portfolio__item__overlay p {
+    color: #f1f5f9;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+    font-weight: 400;
 }
 
 .portfolio__item__video .play-btn {
@@ -541,21 +592,34 @@ textarea {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 28px;
-    background: rgba(255, 0, 0, 0.7);
+    font-size: 24px;
+    background: rgba(255, 0, 0, 0.85);
     color: #fff;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 12px red;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.portfolio__item:hover .play-btn {
+    top: auto;
+    bottom: 12px;
+    left: auto;
+    right: 12px;
+    transform: none;
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
 }
 
 .portfolio__item__video .play-btn:hover {
     background: red;
+    transform: scale(1.1);
 }
 
 .portfolio__item__text {
