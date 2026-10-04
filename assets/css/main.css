@@ -455,17 +455,6 @@ textarea {
     }
 }
 
-.about {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease-in-out;
-}
-
-#about:target {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* === PORTFOLIO SECTION - REBUILT FOR DARK RED GLOW THEME === */
 
 .portfolio {
